@@ -41,9 +41,9 @@ Este arquivo, quando executado no compilador processing, cria uma interface grá
 
 # Assista a CNC em ação no YouTube!
 
-[![Assista no YouTube](https://img.youtube.com/vi/H5-JilG_zv4/hqdefault.jpg)](https://www.youtube.com/watch?v=H5-JilG_zv4)
+[Desenhando um avião](https://www.youtube.com/watch?v=H5-JilG_zv4)
 
-https://www.youtube.com/watch?v=H5-JilG_zv4
+[![Assista no YouTube](https://img.youtube.com/vi/H5-JilG_zv4/hqdefault.jpg)](https://www.youtube.com/watch?v=H5-JilG_zv4)
 
 
 [short](https://www.youtube.com/shorts/jxCdN6tVYik)
