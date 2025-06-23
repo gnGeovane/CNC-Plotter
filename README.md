@@ -33,7 +33,7 @@ Este arquivo, quando executado no compilador processing, cria uma interface grá
 
 ![CNC](https://github.com/user-attachments/assets/07bf675e-016e-4d0d-b267-4f841a70f2a5)
 
-![Base eixo X e Z](https://github.com/user-attachments/assets/c5f858aa-a01c-451d-be9a-643e2bd71321)
+![Captura de tela 2025-06-23 115219](https://github.com/user-attachments/assets/59b7aeef-37a0-487b-9d7a-38e931c0802e)
 
 ![Desenhos](https://github.com/user-attachments/assets/fdfeb391-7295-4330-b843-7dff32849373)
 
@@ -42,10 +42,12 @@ Este arquivo, quando executado no compilador processing, cria uma interface grá
 # Assista a CNC em ação no YouTube!
 
 [![Assista no YouTube](https://img.youtube.com/vi/H5-JilG_zv4/hqdefault.jpg)](https://www.youtube.com/watch?v=H5-JilG_zv4)
+
 https://www.youtube.com/watch?v=H5-JilG_zv4
 
 
 [short](https://www.youtube.com/shorts/jxCdN6tVYik)
+
 [![Thumbnail do vídeo](https://img.youtube.com/vi/jxCdN6tVYik/hqdefault.jpg)](https://www.youtube.com/shorts/jxCdN6tVYik)
 
 
