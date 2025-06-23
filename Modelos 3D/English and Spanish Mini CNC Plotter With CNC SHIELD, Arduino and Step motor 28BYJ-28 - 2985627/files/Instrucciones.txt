@@ -1,0 +1,51 @@
+MINI CNC Hi-Tech
+Bienvenido al tutorial de Electrónica y Robótica Hi-Tech
+para armar nuestra propia maquina CNC pequeña para plotear o 
+hacer scarve en nuestras placas PCB
+
+Primero debemos tener todas las piezas impresas las cuales deben tener 
+el siguiente Orden:
+
+1	X AXIS PLATAFORMMOD
+1	Splindle Holder
+1	Y Slider Rail Unidos
+4	Yaxis Rail Holder Mod
+1	Y Motor Mount
+1	X Motor Mount
+1	Soporte para Lapiz
+1	Z AXIS MOTOR Couplingmod
+
+NOTA: Todas las piezas se deben imprimir a 50% de infill con una resolucion de 
+0.25mm (Layer Hight), 2 perimetros, 3 Top Solid Layers y 3 Bottom Solid Layer.
+Si quires que nosotros te lo imprimamos, seria por un precio de: Q410.00
+
+Listado de componentes electronicos y mecanicos de la CNC
+
+1	CNC Shield con Arduino Uno R3 y 3 Drivers A4988 (Q350.00)
+3	Motor Stepp 28byj-48 hackeado (Q45.00 C/U)
+1	Fuente de Alimentacion 9V (Fuente de Impresora Q85.00)
+1	2 metros de correa dentada GT2 con 2 poleas dentadas (Q100.00)
+2	Rodamientos circulares 608z sin impresion (Q30.00 C/U)
+28	Tornillos con tuerca M3 (Q2.50 C/U)
+10	Tornillos con tuerca M5 (Q2.75 C/U)
+
+NOTA: para los rodamientos circulares buscar en thingivierse la polea que mas te guste.
+
+Instrucciones para ensamble Ver el video.
+
+
+
+Acá te dejo la descargas para que puedas utilizar tu mini cnc una vez armada
+
+Librería GRBL que deberás cargar en el Arduino para que reconozca la CNC Shield y los motores:
+
+http://www.mediafire.com/file/u5dwi73bba91fo0/GRBL%20para%20Arduino.rar
+
+Programa para poder configurar y operar nuestra MINI CNC
+
+http://www.mediafire.com/file/i7xlj4s27cp373v/GrblController361Setup.rar
+http://www.mediafire.com/file/2b5i38sofgz7rwu/UniversalGcodeSender.zip
+http://www.mediafire.com/file/ac3m6jhl83z3uah/ugsplatform.zip (este es el que mas recomiendo).
+
+y por ultimo el programa utilizado para generar los archivos a dibujar
+http://www.mediafire.com/file/1gl1vqsds2q9c3y/inkscape-0.92.3-x64.rar
