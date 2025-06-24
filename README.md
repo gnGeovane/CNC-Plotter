@@ -28,7 +28,7 @@ Este arquivo, quando executado no compilador processing, cria uma interface grá
 
 # Criação de G-CODE
 
-  Para criar o arquivo de cooredenadas de uma imagem para deselhá-la, é necessário utilizar o software InksCape (gratuito) ou Autodesk ArtCAM (Pago)
+  Para criar o arquivo de cooredenadas (G-CODE) de uma imagem para deselhá-la, é necessário utilizar o software InksCape (gratuito) ou Autodesk ArtCAM (Pago). Caso queira plotar um circuito em uma PCB, poderá converter arquivos Gerber(.gbr) e Excellon(.drl) em G-CODE utilizando o software de código aberto FlatCAM.
   
 # Veja os resultados atuais do projeto:
 
