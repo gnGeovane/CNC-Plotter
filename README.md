@@ -8,6 +8,7 @@ Aqui você encontrará os arquivos necessários para fazer uma CNC Plotter e con
   
 As versões mais recentes do código para o arduino incluem suporte para:
 
+- Drivers de motores de passo L293D, ULN2803 e ULN2003;
 - Sensores de fim de curso;
 - Botão stop;
 - Controle de motores de passo com ShiftRegister 74595 usando FullSteps e HalfSteps;
@@ -46,7 +47,7 @@ Este arquivo, quando executado no compilador processing, cria uma interface grá
 [![Assista no YouTube](https://img.youtube.com/vi/H5-JilG_zv4/hqdefault.jpg)](https://www.youtube.com/watch?v=H5-JilG_zv4)
 
 
-[short](https://www.youtube.com/shorts/jxCdN6tVYik)
+[short - Desenhando um touro](https://www.youtube.com/shorts/jxCdN6tVYik)
 
 [![Thumbnail do vídeo](https://img.youtube.com/vi/jxCdN6tVYik/hqdefault.jpg)](https://www.youtube.com/shorts/jxCdN6tVYik)
 
