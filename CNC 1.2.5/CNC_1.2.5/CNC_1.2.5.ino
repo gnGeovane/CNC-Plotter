@@ -5,7 +5,7 @@
   
   Autor: Geovane A. Silva
   Data de Criação: Janeiro de 2025
-  Versão: 2.3
+  Versão: 1.2.5
   
   Licença:
   Este código é distribuído sob a licença MIT, permitindo uso livre
@@ -13,25 +13,21 @@
 
 */
 
-//TX = A4 RX = A5 DO MÓDULO, já para o arduino é o contrário
-
 #include "stepMotor.h"
 #include <SoftwareSerial.h>
 
-
-#define TAMANHO_DA_LINHA 256                            // tamanho máximo de caracteres de uma linha
+#define TAMANHO_DA_LINHA 120                           // tamanho máximo de caracteres de uma linha
 #define Xpos_mm (actuatorPos.x / passosPorMilimetroX)  // pos é a posição em mm
 #define Ypos_mm (actuatorPos.y / passosPorMilimetroY)  // actuatorPos é a posição em passos
 
 SoftwareSerial bluetooth(11, 12); // RX, TX
-
-const int PassosPorVolta = 200;
 
 StepperSR StepperXY(PassosPorVolta, 8, 9, 10);
 StepperSR StepperXYlevantado(PassosPorVolta, 8, 9, 10);
 StepperSR StepperDebug(PassosPorVolta, 8, 9, 10);
 Stepper StepperZ(PassosPorVolta, 7, 5, 6, 4);
 
+const int PassosPorVolta = 200;
 const int planner = 3;
 const int bot = A0;
 
@@ -51,15 +47,15 @@ struct point actuatorPos;
 const int penZUp = 80;
 const int penZDown = -80;
 
-const float passosPorMilimetroX = 23.57; // 24.56
-const float passosPorMilimetroY = 24.81; //23,57
+const float passosPorMilimetroX = 23.57;
+const float passosPorMilimetroY = 24.81;
 
 // número de passos para X e Y considerado pequeno, sendo feito sem aceleração/desaceleração
-const int movimentoCurto = round(passosPorMilimetroX * 2);
+const int movimentoCurto = round(passosPorMilimetroX * 2); // 2 milímetros
 
 // Valores em milímetros do limite da área útil de impressão:
 const float Xmin = 0.00, Xmax = 94.00;
-const float Ymin = 0.00, Ymax = 84.00;
+const float Ymin = 0.00, Ymax = 83.00;
 const float Zmin = 0.00, Zmax = 1.00;
 
 int Zpos_mm = Zmax;
@@ -92,7 +88,7 @@ void setup() {
 
   StepperXY.Off();
 
-  bluetooth.begin(19200);
+  bluetooth.begin(9600); // Impossível comunicar com o módulo com baud rate acima de 9600, devido à alta taxa de falha no sinal
   Serial.begin(115200);
   Serial.println("Mini CNC Plotter a seu comando!");
   Serial.print("X vai de ");
@@ -106,6 +102,7 @@ void setup() {
   Serial.print(Ymax);
   Serial.println(" mm.");
 
+  // Cópia da mensagem de conexão
   bluetooth.println("Mini CNC Plotter a seu comando!");
   bluetooth.print("X vai de ");
   bluetooth.print(Xmin);
@@ -135,7 +132,7 @@ void receberLinha() {
   int posicao_linha = 0;         // Índice para controlar a posição do vetor 'linha'.
   bool LinhaComentada = false;   // Flag para identificar e ignorar comentários e ';' nas linhas recebidas.
 
-  while (1) {  // Loop infinito
+  while (1) {
 
     if(millis() >= (timeOff + 50)) StepperXY.Off();
 
@@ -180,7 +177,7 @@ void receberLinha() {
         }
       }
     }
-    while (bluetooth.available() > 0) {  // Enquanto houver dados na porta serial...
+    while (bluetooth.available() > 0) {  // Enquanto houver dados na porta serial bluetooth...
       c = bluetooth.read();              // Lê um caractere por vez.
       if ((c == '\n') || (c == '\r')) {
         if (posicao_linha > 0) {
@@ -239,7 +236,7 @@ void processarLinha(char* linha, int Numero_De_Caracteres) {
   float areaX = 0.0;
   float areaY = 0.0;
   
-  // **1️⃣ Processa os comandos diretamente**
+  // 1️⃣ Processa os comandos diretamente
   for (int i = 0; i < Numero_De_Caracteres; i++) {
     switch (linha[i]) {
 
@@ -269,11 +266,11 @@ void processarLinha(char* linha, int Numero_De_Caracteres) {
           case 300:
             break;
 
-          case 4:
+          case 4: // M4 - Iniciar temporizador de contagem de tempo do desenho
             totalTime = millis();
             break;
 
-          case 5:
+          case 5: // M5 - Apresentar o tempo total do desenho
             totalTime = (millis() - totalTime) / 1000;
             unsigned long segundos = totalTime % 60;
             unsigned long minutos = (totalTime / 60) % 60;
